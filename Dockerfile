@@ -131,4 +131,8 @@ RUN mkdir -p /home/docs/.asdf/installs/python && \
     mkdir -p /home/docs/.asdf/installs/rust && \
     mkdir -p /home/docs/.asdf/installs/golang
 
+RUN asdf install python latest
+RUN asdf global python `asdf latest python`
+RUN pip install sphinx sphinx-rtd-theme
+
 CMD ["/bin/bash"]
